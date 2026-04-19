@@ -722,8 +722,13 @@
 
   // Mobile nav
   document.getElementById('hamburger').onclick = function() {
-    document.getElementById('mobileNav').classList.add('open');
-    document.body.style.overflow = 'hidden';
+    var nav = document.getElementById('mobileNav');
+    if (nav.classList.contains('open')) {
+      closeMob();
+    } else {
+      nav.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
   };
   document.getElementById('mobileClose').onclick = closeMob;
   function closeMob() {
